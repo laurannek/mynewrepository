@@ -21,7 +21,7 @@ redash_query_dict = {
 }
 
 
-  # Query the data via redash pre-prepared queries
+  # Query the data via redash pre-processed queries
 
 def query_redash(query_number):
     cookie = {'session': redash_cookie}
@@ -74,10 +74,10 @@ def ScatterMap(query_number, time_of_day, tracker_type):
 
 app = dash.Dash()
 
-#print([{'label': key, 'value': value} for key, value in redash_query_dict.items()])
+
 app.layout = html.Div(children = [
     html.Div(children = [
-        html.Label('Lost Bikes Vizualisation'),
+        html.Label('Lost Bikes Vizualisation - Google'),
         dcc.Dropdown(
             id = 'query-dropdown',
             options = [{'label': key, 'value': value} for key, value in redash_query_dict.items()],
